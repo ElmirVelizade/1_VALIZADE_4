@@ -1,0 +1,356 @@
+```html
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1 VALIZADE | OFFICIAL</title>
+    <meta name="description" content="1 Valizade rəsmi sosial media səhifəsi. TikTok və Instagram profillərimi kəşf et.">
+    <meta name="theme-color" content="#080808">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d4af37;
+            --light-gold: #ffe9a3;
+            --black: #080808;
+            --card: #111111;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at top, #30230a 0%, transparent 45%),
+                var(--black);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Arxa fon effektləri */
+        .glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: var(--gold);
+            filter: blur(150px);
+            opacity: 0.12;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .glow-one {
+            top: 10%;
+            left: -150px;
+        }
+
+        .glow-two {
+            bottom: 5%;
+            right: -150px;
+        }
+
+        header {
+            padding: 28px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        .official {
+            margin-top: 8px;
+            color: #aaa;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: auto;
+            padding: 65px 20px 40px;
+            text-align: center;
+        }
+
+        .crown {
+            font-size: 43px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: clamp(35px, 8vw, 62px);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+            background: linear-gradient(
+                120deg,
+                #fff4c4,
+                #d4af37,
+                #fff0a8
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+
+        .line {
+            width: 85px;
+            height: 2px;
+            background: var(--gold);
+            margin: 28px auto 40px;
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: var(--light-gold);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .social-card {
+            background: linear-gradient(145deg, #171717, #0b0b0b);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 20px;
+            padding: 28px 18px;
+            transition: 0.35s ease;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .social-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
+        }
+
+        .social-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .social-card h3 {
+            font-size: 21px;
+            color: var(--light-gold);
+            margin-bottom: 8px;
+        }
+
+        .username {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .qr-frame {
+            width: 175px;
+            height: 175px;
+            max-width: 100%;
+            padding: 10px;
+            margin: 0 auto 22px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 10px;
+            border-radius: 9px;
+            text-decoration: none;
+            color: #080808;
+            background: linear-gradient(
+                110deg,
+                #b88a20,
+                #ffe9a3,
+                #c29a2e
+            );
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.25s;
+        }
+
+        .button:hover {
+            filter: brightness(1.15);
+            transform: scale(1.02);
+        }
+
+        .note {
+            margin-top: 30px;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 560px) {
+            main {
+                padding-top: 45px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-card {
+                max-width: 360px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .logo {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header>
+        <div class="logo">1 VALIZADE</div>
+        <div class="official">OFFICIAL SOCIAL MEDIA</div>
+    </header>
+
+    <main>
+        <div class="crown">👑</div>
+
+        <h1>1 VALIZADE</h1>
+
+        <p class="subtitle">
+            Welcome to my world.<br>
+            Follow me on social media.
+        </p>
+
+        <div class="line"></div>
+
+        <h2 class="section-title">CONNECT WITH ME</h2>
+
+        <div class="social-grid">
+
+            <!-- TIKTOK -->
+            <section class="social-card">
+                <div class="social-icon">🎵</div>
+
+                <h3>TikTok</h3>
+
+                <p class="username">@1_valizade_4</p>
+
+                <div class="qr-frame">
+                    <img
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.tiktok.com%2F%401_valizade_4"
+                        alt="TikTok profilimin QR kodu"
+                        loading="lazy"
+                    >
+                </div>
+
+                <a
+                    class="button"
+                    href="https://www.tiktok.com/@1_valizade_4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TIKTOK PROFİLİM →
+                </a>
+            </section>
+
+            <!-- INSTAGRAM -->
+            <section class="social-card">
+                <div class="social-icon">📸</div>
+
+                <h3>Instagram</h3>
+
+                <p class="username">@1_valizade_4</p>
+
+                <div class="qr-frame">
+                    <img
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fwww.instagram.com%2F1_valizade_4%2F"
+                        alt="Instagram profilimin QR kodu"
+                        loading="lazy"
+                    >
+                </div>
+
+                <a
+                    class="button"
+                    href="https://www.instagram.com/1_valizade_4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    INSTAGRAM PROFİLİM →
+                </a>
+            </section>
+
+        </div>
+
+        <p class="note">
+            Scan the QR code or click the button to visit my profile.
+        </p>
+    </main>
+
+    <footer>
+        © 2026 <span>1 VALIZADE</span> · ALL RIGHTS RESERVED
+    </footer>
+
+</body>
+</html>
+```
